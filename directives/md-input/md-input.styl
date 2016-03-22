@@ -1,0 +1,67 @@
+/* STYLUS */
+
+.pure-md *
+  box-shadow none !important
+.pure-md input:not([type]),
+.pure-md input[type="text"],
+.pure-md input[type="password"],
+.pure-md input[type="email"],
+.pure-md input[type="url"],
+.pure-md input[type="date"],
+.pure-md input[type="month"],
+.pure-md input[type="time"],
+.pure-md input[type="datetime"],
+.pure-md input[type="datetime-local"],
+.pure-md input[type="week"],
+.pure-md input[type="number"],
+.pure-md input[type="search"],
+.pure-md input[type="tel"],
+.pure-md input[type="color"]
+  border-top 0
+  border-left 0
+  border-right 0
+  box-shadow none
+
+.pure-md .input-group input[type="text"]
+  border-right 1px solid #cccccc
+
+.pure-md [md-input] label
+  color black
+  color rgba(0,0,0,0.26)
+  position relative
+  display inline-block
+  top 2px
+  order 1
+  pointer-events none
+  -webkit-font-smoothing antialiased
+  padding-left 10px
+  font-weight 500
+  font-size 1.2em
+  z-index 5
+  transform translate3d(0,30px,0) scale(1)
+  transform-origin left top
+  transition transform cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s
+
+.pure-md [md-input].has-error label
+  color black
+  color rgba(0,0,0,0.5)
+
+.pure-md .md-focus label,
+.pure-md .md-fill label
+  transform translate3d(-5px,0,0) scale(0.85)
+  font-weight 600
+.pure-md .md-fill label
+  color black
+.pure-md .md-focus label
+  color $primary
+
+.pure-md input
+  height 34px
+  width 100%
+  border-bottom 1px solid
+
+.pure-md input.new-checkbox
+  display block
+
+.input-group-md > .btn
+  margin-top 37px

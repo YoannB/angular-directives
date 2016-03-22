@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Demo input-md angular directive</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,400italic,700italic,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" />
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.indigo-pink.min.css"/>
+  <script src="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.min.js"></script>
+
+  <style>
+		.mdl-app section.section--center {
+		  	max-width: 860px;
+			margin: 0 auto;
+		}
+		.mdl-app .mdl-layout__content {
+		  	padding: 8px;
+		  	padding-top: 48px;
+		}
+		.mdl-app .mdl-layout__content section.section--center section/*:not(:last-of-type)*/ {
+			margin-bottom: 48px;
+			position: relative;
+		}
+		.mdl-app section > header {
+			align-items: center;
+			display: flex;
+			justify-content: center;
+		}
+		.mdl-app .mdl-card {
+			display: flex;
+			flex-direction: column;
+			height: auto;
+		}
+		.mdl-app section > header > .material-icons {
+			font-size: 3rem;
+		}
+		.mdl-app section > button {
+			position: absolute;
+			right: 8px;
+			top: 8px;
+			z-index: 99;
+		}
+		.mdl-app .mdl-card > * {
+			height: auto;
+		}
+		.mdl-app .mdl-card .mdl-card__supporting-text {
+			color: inherit;
+			flex-grow: 1;
+			margin-bottom: 40px;
+			margin-left: 40px;
+			margin-right: 40px;
+			margin-top: 40px;
+			padding-bottom: 0;
+			padding-left: 0;
+			padding-right: 0;
+			padding-top: 0;
+			width: calc(100% - 80px);
+		}
+		.mdl-app .mdl-card__supporting-text h4 {
+			margin-bottom: 20px;
+			margin-top: 0;
+		}
+		.mdl-app .mdl-card__actions {
+			color: inherit;
+			margin-bottom: 0;
+			margin-left: 0;
+			margin-right: 0;
+			margin-top: 0;
+			padding-bottom: 4px;
+			padding-left: 40px;
+			padding-right: 40px;
+			padding-top: 4px;
+		}
+		.mdl-app .mdl-card__actions a {
+			color: #00bcd4;
+			margin-bottom: 0;
+			margin-left: 0;
+			margin-right: 0;
+			margin-top: 0;
+		}
+		.mdl-app .mdl-card__actions a:hover, .mdl-demo .mdl-card__actions a:active {
+			background-color: transparent;
+			color: inherit;
+		}
+		.mdl-app .mdl-card__supporting-text + .mdl-card__actions {
+			border-top-color: rgba(0, 0, 0, 0.12);
+			border-top-style: solid;
+			border-top-width: 1px;
+		}
+		.mdl-app .mdl-menu__container {
+		  z-index: 99;
+		}
+  </style>
+</head>
+<body data-ng-app="demoInputMd" class="mdl-app mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+    <noscript>
+        Javascript needs to be active to consult this page.
+    </noscript>
+
+    <div class="mdl-layout mdl-js-layout">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <span class="mdl-layout-title">Demo md-input</span>
+                <div class="mdl-layout-spacer"></div>
+            </div>
+        </header>
+        <main class="mdl-layout__content" ui-view></main>
+    </div>
+
+    <!-- vendor -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.28/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.28/angular-animate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.28/angular-cookies.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.28/angular-touch.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.28/angular-sanitize.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.28/angular-resource.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-i18n/1.2.15/angular-locale_en-us.js"></script>
+
+    <!-- md-input -->
+    <script src="md-input.client.directive.js"></script>
+	<link rel="stylesheet" href="md-input.css"/>
+
+    <!-- template -->
+	<script type="text/ng-template" id="app.html">
+			<section class="section--center">
+				<section class="mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+					<div class="mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+						<div class="mdl-card__supporting-text">
+							<h4>Simple input text with md-input</h4>
+							
+							<form class="pure-md">
+								 <div md-input="inputMd">
+									<input tabindex="0" type="text" data-ng-model="inputMd" id="" name="" placeholder="Input MD">
+								 </div>
+							 </form>
+						</div>
+					</div>
+				</section>
+			</section>
+			<footer class="mdl-mini-footer">
+				<div class="mdl-mini-footer__left-section">
+					<div class="mdl-logo">&copy; YoannB 2016</div>
+				</div>
+			</footer>
+	</script>
+
+    <!-- app -->
+    <script>
+		'use strict';
+
+		angular
+			.module('demoInputMd', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngResource', 'ui.router','mdInput'])
+			.config(['$stateProvider','$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+					$stateProvider
+					    .state('app', {
+					        url   : '/',
+					        cache : false,
+					        templateUrl : 'app.html',
+					        controller  : 'appController'
+					    });
+					$urlRouterProvider.otherwise('/');
+				}
+			])
+			.run(['$rootScope','$timeout', function ($rootScope, $timeout) {
+				    $rootScope.$on('$viewContentLoaded', function () {
+				        $timeout(function () {
+				            window.componentHandler.upgradeAllRegistered();
+				        });
+				    });
+				}
+			])
+			.controller('appController', ['$scope','$timeout', function ($scope,$timeout) {
+				
+        	}]);
+    </script>
+</body>
+</html>
